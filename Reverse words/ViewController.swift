@@ -27,6 +27,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        textField.delegate = self
+
     }
     
     
@@ -37,14 +39,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func actionButton(_ sender: Any) {
         if textField.text == "" {
-            return reversLable.text = "Input you text, please!"
+            return reversLable.text = "Input You Text, please!"
         } else if let inputText = textField.text {
             reversLable.text = String(inputText.reversed())
             textField.text = ""
             textField.resignFirstResponder()
         
         }
-        textField.delegate = self
        
     }
     
